@@ -13,8 +13,6 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>{children}</body>
-
-            <h1>lorem</h1>
         </html>
     );
 }
