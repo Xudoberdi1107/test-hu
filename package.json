@@ -5,7 +5,11 @@
   "scripts": {
     "serve": "nx start",
     "lint": "eslint",
-    "prepare": "husky"
+    "test": "husky",
+    "format": "prettier --write .",
+    "check-types": "tsc --pretty --noEmit",
+    "check-format": "prettier --check .",
+    "check-lint": "eslint "
   },
   "private": true,
   "dependencies": {
