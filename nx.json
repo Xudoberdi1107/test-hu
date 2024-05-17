@@ -16,9 +16,9 @@
   },
   "plugins": [
     {
-      "plugin": "@nx/next/plugin",
+      "plugin": "@nx/jest/plugin",
       "options": {
-        "startTargetName": "start",
+        "startTargetName": "serve",
         "buildTargetName": "build",
         "devTargetName": "dev",
         "serveStaticTargetName": "serve-static"
@@ -35,11 +35,36 @@
       "options": {
         "targetName": "lint"
       }
+    },
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "testTargetName": "test",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview",
+        "serveStaticTargetName": "serve-static"
+      }
     }
   ],
   "generators": {
     "@nx/next": {
       "application": {
+        "style": "tailwind",
+        "linter": "eslint"
+      }
+    },
+    "@nx/react": {
+      "application": {
+        "babel": true,
+        "style": "tailwind",
+        "linter": "eslint",
+        "bundler": "vite"
+      },
+      "component": {
+        "style": "tailwind"
+      },
+      "library": {
         "style": "tailwind",
         "linter": "eslint"
       }
